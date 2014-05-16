@@ -5,7 +5,7 @@
       version="0.1.0">
     <name>File Transfer</name>
 
-    <dependency id="org.apache.cordova.core.file" url="https://git-wip-us.apache.org/repos/asf/cordova-plugin-file" commit="master" subdir="/*" />
+    <dependency id="org.apache.cordova.core.file"/>
 
     <js-module src="www/FileTransferError.js" name="FileTransferError">
         <clobbers target="window.FileTransferError" />
@@ -32,16 +32,6 @@
         <source-file src="src/android/FileUploadResult.java" target-dir="src/org/apache/cordova/core" />
     </platform>
 
-    <platform name="blackberry10">
-        <config-file target="www/config.xml" parent="/widget">
-            <feature name="FileTransfer" value="FileTransfer"></feature>
-        </config-file>
-        <js-module src="www/blackberry10/FileTransfer.js" name="BB10FileTransfer">
-            <clobbers target="window.FileTransfer"></clobbers>
-        </js-module>
-        <js-module src="www/blackberry10/XHRImplementation.js" name="BB10XHRImplementation"></js-module>
-    </platform>
-
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
@@ -51,38 +41,6 @@
         </config-file>
         <header-file src="src/ios/CDVFileTransfer.h" />
         <source-file src="src/ios/CDVFileTransfer.m" />
-    </platform>
-
-    <!-- wp7 -->
-    <platform name="wp7">
-        <config-file target="config.xml" parent="/*">
-            <feature name="FileTransfer">
-                <param name="wp-package" value="FileTransfer"/>
-            </feature>
-        </config-file>
-
-        <source-file src="src/wp/FileTransfer.cs" />
-
-        <js-module src="www/wp/FileTransfer.js" name="FileTransfer1">
-            <clobbers target="window.FileTransfer" />
-        </js-module>
-
-    </platform>
-
-    <!-- wp8 -->
-    <platform name="wp8">
-        <config-file target="config.xml" parent="/*">
-            <feature name="FileTransfer">
-                <param name="wp-package" value="FileTransfer"/>
-            </feature>
-        </config-file>
-
-        <source-file src="src/wp/FileTransfer.cs" />
-
-        <js-module src="www/wp/FileTransfer.js" name="FileTransfer1">
-            <clobbers target="window.FileTransfer" />
-        </js-module>
-
     </platform>
 
 </plugin>
